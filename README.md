@@ -57,3 +57,78 @@ Uma calculatora simples
 </body>
 
 </html>
+
+
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+.fundo {
+  background-image: linear-gradient (25deg, rgb(125, 77, 186) .rgb(79, 45, 162));
+  height: 100vh;
+  color: white;
+  font-family: arial, helvetica, sans serife;
+  text-aling: right;
+}
+.Calculadora {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.9);
+  top: 50%;
+  left: 50%;
+  tranform: translate(-50%, -50%);
+  border-radius: 13px;
+}
+.botao {
+  width: 50px;
+  height: 50px;
+  font-size: 25px;
+  cursor: pointer;
+  margin: 3px;
+  background-color: rgb(32, 32, 32);
+  border: none;
+  color: white;
+}
+.botao:hover {
+  width: 207px;
+  background-color: white;
+  height: 30px;
+  margin: 6px;
+  font-size: 26px;
+  color: black;
+  text-align: right;
+  padding: 5px;
+}
+
+
+
+
+function insert (num)
+{
+    var numero = document.getElementById('resultado').innerHTML;
+    document.getElementById('resultado').innerHTML = numero + num;
+}
+function clean()
+{
+    document.getElementById('resultado').innerHTML = "";
+}
+function back()
+{
+    var resultado = document.getElementById('resultado').innerHTML;
+    document.getElementById('resultado').innerHTML = resultado.substring(0, resultado.length -1);
+}
+function calcular()
+{
+    var resultado = document.getElementById('resultado').innerHTML;
+    if(resultado)
+    {
+        document.getElementById('resultado').innerHTML = eval(resultado);
+    }
+    else
+    {
+        document.getElementById('resultado').innerHTML = "Nada..."
+    }
+}
